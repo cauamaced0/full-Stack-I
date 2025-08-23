@@ -1,6 +1,7 @@
 const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts');
 const routerHome = require("./routes/homeRoute");
+const routerUsuario = require("./routes/usuarioRoute");
 const server = express();
 
 //configurações do EJS
@@ -18,7 +19,8 @@ server.use(express.urlencoded({extended: true}));
 
 
 server.use("/", routerHome);
+server.use("/usuario",routerUsuario)
 
 server.listen(5000, function() {
-    console.log("servidor web em funcionamento!");
+    console.log("servidor rodando em: http://localhost:5000 !");
 })
