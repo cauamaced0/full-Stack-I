@@ -21,6 +21,6 @@ server.use(express.urlencoded({extended: true}));
 server.use("/", routerHome);
 server.use("/usuario", routerUsuario);
 
-server.listen(5000, function() {
-    console.log("servidor web em funcionamento!");
+server.listen(4200, function() {
+    console.log("servidor funcionando em http://localhost:4200!");
 })

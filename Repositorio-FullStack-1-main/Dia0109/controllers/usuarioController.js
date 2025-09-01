@@ -17,6 +17,14 @@ class UsuarioController {
         teste.usuarioNome = 'nome';
         res.render("usuario/cadastrar");
     }
+
+    cadastrar(req, resp)
+    {
+        console.log(req.body);
+        //Ler os dados do body,validar se estao corretos e
+        //criar uma usuario model com esses dados para que sejam persistidos com o metodo
+        //cadastrar da modelo
+    }
 }
 
 module.exports = UsuarioController;
