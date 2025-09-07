@@ -20,6 +20,9 @@ server.use(express.urlencoded({extended: true}));
 
 server.use("/", routerHome);
 server.use("/usuario", routerUsuario);
+//  rotas de login
+app.get("/login", (req, res) => usuarioController.loginView(req, res));
+app.post("/login", (req, res) => usuarioController.login(req, res));
 
 server.listen(4200, function() {
     console.log("servidor funcionando em http://localhost:4200!");

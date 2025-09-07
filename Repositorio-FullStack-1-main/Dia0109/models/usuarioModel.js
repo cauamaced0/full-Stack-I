@@ -102,6 +102,15 @@ class UsuarioModel {
 
         return result;
     }
+    
+    async buscarPorEmail(email) {
+        let sql = "SELECT * FROM tb_usuario WHERE usuario_email = ?";
+        let rows = await Database.query(sql, [email]);
+        if (rows.length === 0) return null;
+
+        let row = rows[0];
+        return new UsuarioModel(row["usuario_id"], row["usuario_nome"], row["usuario_email"], row["usuario_senha"], row["usuario_ativo"], row["perfil_id"]);
+    }
 }
 
 module.exports = UsuarioModel;
